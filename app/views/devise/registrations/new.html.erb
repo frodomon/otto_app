@@ -1,3 +1,6 @@
+<% content_for :header do -%>
+<%= javascript_include_tag 'new_users' %>
+<% end -%>
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -33,6 +36,28 @@
     <%= label_tag(:genre_M, "Masculino") %>
     <%= f.radio_button :genre, "F" %>
     <%= label_tag(:genre_F, "Femenino") %>
+  </div>
+
+  <div class="departamento">
+    <label>Departamento:</label>
+    <select id="departamento">
+      <option value = "default" selected>Seleccione un Departamento</option>
+    </select>
+  </div>
+  
+  <div class="provincia">
+    <label>Provincia:</label>
+    <select id="provincia">
+      <option value = "default" selected>Seleccione una Provincia</option>
+    </select>
+  </div>
+  
+  <div class="distrito">
+    <label>Distrito:</label>
+    <select id="distrito">
+      <option value = "default" selected>Seleccione un Distrito</option>
+    </select>
+    <%= f.hidden_field :ubigeo_id %>
   </div>
   
   <div class="field">

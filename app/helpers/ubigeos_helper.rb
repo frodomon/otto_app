@@ -1,0 +1,2 @@
+module UbigeosHelper
+end

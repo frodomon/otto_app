@@ -15,5 +15,6 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << :phone
     devise_parameter_sanitizer.for(:sign_up) << :mobile
     devise_parameter_sanitizer.for(:sign_up) << :birthDate
+    devise_parameter_sanitizer.for(:sign_up) << :ubigeo_id
   end
 end

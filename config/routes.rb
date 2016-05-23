@@ -1,4 +1,6 @@
 OttoApp::Application.routes.draw do
+  resources :ubigeos
+
   devise_for :users, controllers: {
         sessions: 'users/sessions'
       }
@@ -11,6 +13,10 @@ OttoApp::Application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
+  get '/ubigeo/get/departamentos(.:format)'=>"ubigeos#get_departamentos"
+  get '/ubigeo/get/provincias/:departamento(.:format)'=>"ubigeos#get_provincias"
+  get '/ubigeo/get/distritos/:provincia(.:format)'=>"ubigeos#get_distritos"
+  get '/ubigeo/get/ubigeo/:ubigeo_id(.:format)' =>"ubigeos#get_ubigeo"
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

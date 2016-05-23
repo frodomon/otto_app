@@ -2,14 +2,14 @@ class DeviseCreateUsers < ActiveRecord::Migration
   def change
     create_table(:users) do |t|
       ## Additonal info
-      t.integer   :title
       t.string    :name
       t.string    :lastName
       t.string    :genre,           :limit =>1
       t.string    :phone
       t.string    :mobile
       t.date      :birthDate
-      t.string    :userName
+      t.string    :userName,        null: false
+      t.references :ubigeo, index: true, foreign_key: true
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
